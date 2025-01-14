@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerar Tabela HTML</title>
+  <style>
+    /* Estilo geral */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    /* Container para os campos de select e o código gerado */
+    .container {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      max-width: 1000px;
+      margin-top: 20px;
+    }
+
+    /* Estilo do formulário */
+    .formulario {
+      width: 48%;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #f9f9f9;
+      margin-bottom: 10px;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #00a8ff;
+      color: #fff;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #007bb5;
+    }
+
+    /* Estilo para o campo de código gerado */
+    #codigo-gerado {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #f9f9f9;
+      resize: vertical;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+      line-height: 1.4;
+      min-height: 200px;
+      box-sizing: border-box;
+    }
+
+    /* Botão de copiar */
+    #copy-btn {
+      display: inline-block;
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #copy-btn:hover {
+      background-color: #218838;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .formulario {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+
+    /* Estilo para os campos de mês e ano na mesma linha */
+    .linha-dupla {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .linha-dupla select {
+      width: 48%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Container principal -->
+  <div class="container">
+    <!-- Formulário para personalizar as situações -->
+    <div class="formulario">
+      <label for="windows-select">Windows:</label>
+      <select id="windows-select">
+        <option value="#4CD137|Recebeu">Recebeu</option>
+        <option value="#00A8FF|Entregar">Entregar</option>
+        <option value="#9C88FF|Dividir">Dividir</option>
+        <option value="#FBC531|Comprar">Comprar</option>
+      </select>
+
+      <label for="powerpoint-select">PowerPoint:</label>
+      <select id="powerpoint-select">
+        <option value="#4CD137|Recebeu">Recebeu</option>
+        <option value="#00A8FF|Entregar">Entregar</option>
+        <option value="#9C88FF|Dividir">Dividir</option>
+        <option value="#FBC531|Comprar">Comprar</option>
+      </select>
+
+      <label for="word-select">Word:</label>
+      <select id="word-select">
+        <option value="#4CD137|Recebeu">Recebeu</option>
+        <option value="#00A8FF|Entregar">Entregar</option>
+        <option value="#9C88FF|Dividir">Dividir</option>
+        <option value="#FBC531|Comprar">Comprar</option>
+      </select>
+
+      <label for="corel-select">Corel Draw/Photoshop:</label>
+      <select id="corel-select">
+        <option value="#4CD137|Recebeu">Recebeu</option>
+        <option value="#00A8FF|Entregar">Entregar</option>
+        <option value="#9C88FF|Dividir">Dividir</option>
+        <option value="#FBC531|Comprar">Comprar</option>
+      </select>
+
+      <label for="impressao-select">Impressão 3D:</label>
+      <select id="impressao-select">
+        <option value="#4CD137|Recebeu">Recebeu</option>
+        <option value="#00A8FF|Entregar">Entregar</option>
+        <option value="#9C88FF|Dividir">Dividir</option>
+        <option value="#FBC531|Comprar">Comprar</option>
+      </select>
+
+      <label for="excel-select">Excel:</label>
+      <select id="excel-select">
+        <option value="#4CD137|Recebeu">Recebeu</option>
+        <option value="#00A8FF|Entregar">Entregar</option>
+        <option value="#9C88FF|Dividir">Dividir</option>
+        <option value="#FBC531|Comprar">Comprar</option>
+      </select>
+
+      <div class="linha-dupla">
+        <div>
+          <label for="mes-select">Mês da Próxima Compra:</label>
+          <select id="mes-select">
+            <option value="JANEIRO">JANEIRO</option>
+            <option value="FEVEREIRO">FEVEREIRO</option>
+            <option value="MARÇO">MARÇO</option>
+            <option value="ABRIL">ABRIL</option>
+            <option value="MAIO">MAIO</option>
+            <option value="JUNHO">JUNHO</option>
+            <option value="JULHO">JULHO</option>
+            <option value="AGOSTO">AGOSTO</option>
+            <option value="SETEMBRO">SETEMBRO</option>
+            <option value="OUTUBRO">OUTUBRO</option>
+            <option value="NOVEMBRO">NOVEMBRO</option>
+            <option value="DEZEMBRO">DEZEMBRO</option>
+          </select>
+        </div>
+        <div>
+          <label for="ano-select">Ano da Próxima Compra:</label>
+          <select id="ano-select">
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+            <option value="2028">2028</option>
+            <option value="2029">2029</option>
+            <option value="2030">2030</option>
+          </select>
+        </div>
+      </div>
+
+      <button type="button" onclick="gerarTabela()">Gerar Código</button>
+    </div>
+
+    <!-- Campo para exibir o código gerado -->
+    <div class="formulario">
+      <h3>Código Gerado:</h3>
+      <textarea id="codigo-gerado" rows="10" readonly></textarea>
+      <button id="copy-btn" onclick="copiarCodigo()">Copiar Código</button>
+    </div>
+  </div>
+
+  <script>
+    // Reutilize o script já aprovado
+    function gerarTabela() {
+      const situacoes = {
+        windows: document.getElementById('windows-select').value.split('|'),
+        powerpoint: document.getElementById('powerpoint-select').value.split('|'),
+        word: document.getElementById('word-select').value.split('|'),
+        corel: document.getElementById('corel-select').value.split('|'),
+        impressao: document.getElementById('impressao-select').value.split('|'),
+        excel: document.getElementById('excel-select').value.split('|'),
+      };
+      const mes = document.getElementById('mes-select').value;
+      const ano = document.getElementById('ano-select').value;
+      const tabelaHTML = `
+<table style="width:100%;">
+  <tr>
+    <th style="text-align: center">MATERIAL</th>
+    <th style="text-align: center">SITUAÇÃO</th>
+  </tr>
+  <tr>
+    <td>Windows</td>
+    <td bgcolor="${situacoes.windows[0]}" style="text-align: center">${situacoes.windows[1]}</td>
+  </tr>
+  <tr>
+    <td>Power Point</td>
+    <td bgcolor="${situacoes.powerpoint[0]}" style="text-align: center">${situacoes.powerpoint[1]}</td>
+  </tr>
+  <tr>
+    <td>Word</td>
+    <td bgcolor="${situacoes.word[0]}" style="text-align: center">${situacoes.word[1]}</td>
+  </tr>
+  <tr>
+    <td>Corel Draw/Photoshop</td>
+    <td bgcolor="${situacoes.corel[0]}" style="text-align: center">${situacoes.corel[1]}</td>
+  </tr>
+  <tr>
+    <td>Impressão 3D</td>
+    <td bgcolor="${situacoes.impressao[0]}" style="text-align: center">${situacoes.impressao[1]}</td>
+  </tr>
+  <tr>
+    <td>Excel</td>
+    <td bgcolor="${situacoes.excel[0]}" style="text-align: center">${situacoes.excel[1]}</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: right; color:red;">*Próxima compra em ${mes}/${ano}</td>
+  </tr>
+</table>`;
+      document.getElementById('codigo-gerado').value = tabelaHTML;
+    }
+
+    // Função para copiar o código para a área de transferência
+    function copiarCodigo() {
+      const codigoGerado = document.getElementById('codigo-gerado');
+      codigoGerado.select();
+      document.execCommand('copy');
+      alert('Código copiado com sucesso!');
+    }
+  </script>
+</body>
+</html>
