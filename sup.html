@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerar Tabela HTML</title>
+  <style>
+    /* Estilo geral */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      max-width: 1000px;
+      margin-top: 20px;
+    }
+
+    .formulario {
+      width: 48%;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #f9f9f9;
+      margin-bottom: 10px;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #00a8ff;
+      color: #fff;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #007bb5;
+    }
+
+    #codigo-gerado {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #f9f9f9;
+      resize: vertical;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+      line-height: 1.4;
+      min-height: 200px;
+      box-sizing: border-box;
+    }
+
+    #copy-btn {
+      display: inline-block;
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #copy-btn:hover {
+      background-color: #218838;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .formulario {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+
+    .linha-dupla {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .linha-dupla select {
+      width: 48%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="formulario">
+      <label for="hardware-i">Hardware I (Desktop):</label>
+      <select id="hardware-i">
+        <option value="#4CD137|Recebeu">Recebeu</option>
+        <option value="#00A8FF|Entregar">Entregar</option>
+        <option value="#9C88FF|Dividir">Dividir</option>
+        <option value="#FBC531|Comprar">Comprar</option>
+      </select>
+
+      <label for="instalacoes-i">Instalações I (Windows):</label>
+      <select id="instalacoes-i">
+        <option value="#4CD137|Recebeu">Recebeu</option>
+        <option value="#00A8FF|Entregar">Entregar</option>
+        <option value="#9C88FF|Dividir">Dividir</option>
+        <option value="#FBC531|Comprar">Comprar</option>
+      </select>
+
+      <label for="instalacoes-ii">Instalações II (Linux):</label>
+      <select id="instalacoes-ii">
+        <option value="#4CD137|Recebeu">Recebeu</option>
+        <option value="#00A8FF|Entregar">Entregar</option>
+        <option value="#9C88FF|Dividir">Dividir</option>
+        <option value="#FBC531|Comprar">Comprar</option>
+      </select>
+
+      <label for="hardware-ii">Hardware II (Notebook):</label>
+      <select id="hardware-ii">
+        <option value="#4CD137|Recebeu">Recebeu</option>
+        <option value="#00A8FF|Entregar">Entregar</option>
+        <option value="#9C88FF|Dividir">Dividir</option>
+        <option value="#FBC531|Comprar">Comprar</option>
+      </select>
+
+      <label for="redes">Redes:</label>
+      <select id="redes">
+        <option value="#4CD137|Recebeu">Recebeu</option>
+        <option value="#00A8FF|Entregar">Entregar</option>
+        <option value="#9C88FF|Dividir">Dividir</option>
+        <option value="#FBC531|Comprar">Comprar</option>
+      </select>
+
+      <label for="hardware-iii">Hardware III (Celular):</label>
+      <select id="hardware-iii">
+        <option value="#4CD137|Recebeu">Recebeu</option>
+        <option value="#00A8FF|Entregar">Entregar</option>
+        <option value="#9C88FF|Dividir">Dividir</option>
+        <option value="#FBC531|Comprar">Comprar</option>
+      </select>
+
+      <label for="arduino">Arduino:</label>
+      <select id="arduino">
+        <option value="#4CD137|Recebeu">Recebeu</option>
+        <option value="#00A8FF|Entregar">Entregar</option>
+        <option value="#9C88FF|Dividir">Dividir</option>
+        <option value="#FBC531|Comprar">Comprar</option>
+      </select>
+
+      <div class="linha-dupla">
+        <div>
+          <label for="mes-select">Mês da Próxima Compra:</label>
+          <select id="mes-select">
+            <option value="JANEIRO">JANEIRO</option>
+            <option value="FEVEREIRO">FEVEREIRO</option>
+            <option value="MARÇO">MARÇO</option>
+            <option value="ABRIL">ABRIL</option>
+            <option value="MAIO">MAIO</option>
+            <option value="JUNHO">JUNHO</option>
+            <option value="JULHO">JULHO</option>
+            <option value="AGOSTO">AGOSTO</option>
+            <option value="SETEMBRO">SETEMBRO</option>
+            <option value="OUTUBRO">OUTUBRO</option>
+            <option value="NOVEMBRO">NOVEMBRO</option>
+            <option value="DEZEMBRO">DEZEMBRO</option>
+          </select>
+        </div>
+        <div>
+          <label for="ano-select">Ano da Próxima Compra:</label>
+          <select id="ano-select">
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+            <option value="2028">2028</option>
+            <option value="2029">2029</option>
+            <option value="2030">2030</option>
+          </select>
+        </div>
+      </div>
+
+      <button type="button" onclick="gerarTabela()">Gerar Código</button>
+    </div>
+
+    <div class="formulario">
+      <h3>Código Gerado:</h3>
+      <textarea id="codigo-gerado" rows="10" readonly></textarea>
+      <button id="copy-btn" onclick="copiarCodigo()">Copiar Código</button>
+    </div>
+  </div>
+
+  <script>
+    function gerarTabela() {
+      const situacoes = {
+        hardwareI: document.getElementById('hardware-i').value.split('|'),
+        instalacoesI: document.getElementById('instalacoes-i').value.split('|'),
+        instalacoesII: document.getElementById('instalacoes-ii').value.split('|'),
+        hardwareII: document.getElementById('hardware-ii').value.split('|'),
+        redes: document.getElementById('redes').value.split('|'),
+        hardwareIII: document.getElementById('hardware-iii').value.split('|'),
+        arduino: document.getElementById('arduino').value.split('|'),
+      };
+      const mes = document.getElementById('mes-select').value;
+      const ano = document.getElementById('ano-select').value;
+      const tabelaHTML = `
+<table style="width:100%;">
+  <tr>
+    <th style="text-align: center">MATERIAL</th>
+    <th style="text-align: center">SITUAÇÃO</th>
+  </tr>
+  <tr>
+    <td>Hardware I (Desktop)</td>
+    <td bgcolor="${situacoes.hardwareI[0]}" style="text-align: center">${situacoes.hardwareI[1]}</td>
+  </tr>
+  <tr>
+    <td>Instalações I (Windows)</td>
+    <td bgcolor="${situacoes.instalacoesI[0]}" style="text-align: center">${situacoes.instalacoesI[1]}</td>
+  </tr>
+  <tr>
+    <td>Instalações II (Linux)</td>
+    <td bgcolor="${situacoes.instalacoesII[0]}" style="text-align: center">${situacoes.instalacoesII[1]}</td>
+  </tr>
+  <tr>
+    <td>Hardware II (Notebook)</td>
+    <td bgcolor="${situacoes.hardwareII[0]}" style="text-align: center">${situacoes.hardwareII[1]}</td>
+  </tr>
+  <tr>
+    <td>Redes</td>
+    <td bgcolor="${situacoes.redes[0]}" style="text-align: center">${situacoes.redes[1]}</td>
+  </tr>
+  <tr>
+    <td>Hardware III (Celular)</td>
+    <td bgcolor="${situacoes.hardwareIII[0]}" style="text-align: center">${situacoes.hardwareIII[1]}</td>
+  </tr>
+  <tr>
+    <td>Arduino</td>
+    <td bgcolor="${situacoes.arduino[0]}" style="text-align: center">${situacoes.arduino[1]}</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: right; color:red;">*Próxima compra em ${mes}/${ano}</td>
+  </tr>
+</table>`;
+      document.getElementById('codigo-gerado').value = tabelaHTML;
+    }
+
+    function copiarCodigo() {
+      const codigoGerado = document.getElementById('codigo-gerado');
+      codigoGerado.select();
+      document.execCommand('copy');
+      alert('Código copiado com sucesso!');
+    }
+  </script>
+</body>
+</html>
