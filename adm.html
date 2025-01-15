@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerar Tabela HTML</title>
+  <style>
+    /* Estilo geral do body */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Estilo do menu */
+    .menu {
+      display: flex;
+      justify-content: center;
+      background-color: #333;
+      padding: 7px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    /* Estilo dos botões do menu */
+    .menu a {
+      text-decoration: none;
+      color: white;
+      padding: 10px 20px;
+      margin: 0 10px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      font-weight: bold;
+    }
+
+    /* Efeito ao passar o mouse */
+    .menu a:hover {
+      background-color: #575757;
+    }
+
+    /* Estilo geral */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    /* Container para os campos de select e o código gerado */
+    .container {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      max-width: 1000px;
+      margin-top: 50px;
+    }
+
+    /* Estilo do formulário */
+    .formulario {
+      width: 48%;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #f9f9f9;
+      margin-bottom: 10px;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #00a8ff;
+      color: #fff;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #007bb5;
+    }
+
+    /* Estilo para o campo de código gerado */
+    #codigo-gerado {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #f9f9f9;
+      resize: vertical;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 14px;
+      line-height: 1.4;
+      min-height: 200px;
+      box-sizing: border-box;
+    }
+
+    /* Botão de copiar */
+    #copy-btn {
+      display: inline-block;
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #copy-btn:hover {
+      background-color: #218838;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .formulario {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+
+    /* Estilo para os campos de mês e ano na mesma linha */
+    .linha-dupla {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .linha-dupla select {
+      width: 48%;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Menu de navegação -->
+  <nav class="menu">
+    <a href="index.html">Infonext</a>
+    <a href="sup.html">Suporte Técnico</a>
+    <a href="adm.html">Administração</a>
+    <a href="ingles.html">Inglês</a>
+  </nav>
+
+  <!-- Container principal -->
+  <div class="container">
+    <!-- Formulário para personalizar as situações -->
+    <div class="formulario">
+      <label for="administracao-select">Administração:</label>
+      <select id="administracao-select">
+        <option value="#4CD137|Recebeu">Recebeu</option>
+        <option value="#00A8FF|Entregar">Entregar</option>
+        <option value="#9C88FF|Dividir">Dividir</option>
+        <option value="#FBC531|Comprar">Comprar</option>
+      </select>
+
+      <label for="empreendedorismo-select">Empreendedorismo:</label>
+      <select id="empreendedorismo-select">
+        <option value="#4CD137|Recebeu">Recebeu</option>
+        <option value="#00A8FF|Entregar">Entregar</option>
+        <option value="#9C88FF|Dividir">Dividir</option>
+        <option value="#FBC531|Comprar">Comprar</option>
+      </select>
+
+      <label for="rh-select">RH e Leis Trabalhistas:</label>
+      <select id="rh-select">
+        <option value="#4CD137|Recebeu">Recebeu</option>
+        <option value="#00A8FF|Entregar">Entregar</option>
+        <option value="#9C88FF|Dividir">Dividir</option>
+        <option value="#FBC531|Comprar">Comprar</option>
+      </select>
+
+      <label for="folha-select">Folha de Pagamento:</label>
+      <select id="folha-select">
+        <option value="#4CD137|Recebeu">Recebeu</option>
+        <option value="#00A8FF|Entregar">Entregar</option>
+        <option value="#9C88FF|Dividir">Dividir</option>
+        <option value="#FBC531|Comprar">Comprar</option>
+      </select>
+
+      <label for="lideranca-select">Liderança e Desenvolvimento Humano:</label>
+      <select id="lideranca-select">
+        <option value="#4CD137|Recebeu">Recebeu</option>
+        <option value="#00A8FF|Entregar">Entregar</option>
+        <option value="#9C88FF|Dividir">Dividir</option>
+        <option value="#FBC531|Comprar">Comprar</option>
+      </select>
+
+      <label for="comunicacao-select">Comunicação Corporativa:</label>
+      <select id="comunicacao-select">
+        <option value="#4CD137|Recebeu">Recebeu</option>
+        <option value="#00A8FF|Entregar">Entregar</option>
+        <option value="#9C88FF|Dividir">Dividir</option>
+        <option value="#FBC531|Comprar">Comprar</option>
+      </select>
+
+      <label for="marketing-select">Marketing:</label>
+      <select id="marketing-select">
+        <option value="#4CD137|Recebeu">Recebeu</option>
+        <option value="#00A8FF|Entregar">Entregar</option>
+        <option value="#9C88FF|Dividir">Dividir</option>
+        <option value="#FBC531|Comprar">Comprar</option>
+      </select>
+
+      <label for="matematica-select">Matemática Financeira:</label>
+      <select id="matematica-select">
+        <option value="#4CD137|Recebeu">Recebeu</option>
+        <option value="#00A8FF|Entregar">Entregar</option>
+        <option value="#9C88FF|Dividir">Dividir</option>
+        <option value="#FBC531|Comprar">Comprar</option>
+      </select>
+
+      <div class="linha-dupla">
+        <div>
+          <label for="mes-select">Mês da Próxima Compra:</label>
+          <select id="mes-select">
+            <option value="JANEIRO">JANEIRO</option>
+            <option value="FEVEREIRO">FEVEREIRO</option>
+            <option value="MARÇO">MARÇO</option>
+            <option value="ABRIL">ABRIL</option>
+            <option value="MAIO">MAIO</option>
+            <option value="JUNHO">JUNHO</option>
+            <option value="JULHO">JULHO</option>
+            <option value="AGOSTO">AGOSTO</option>
+            <option value="SETEMBRO">SETEMBRO</option>
+            <option value="OUTUBRO">OUTUBRO</option>
+            <option value="NOVEMBRO">NOVEMBRO</option>
+            <option value="DEZEMBRO">DEZEMBRO</option>
+          </select>
+        </div>
+        <div>
+          <label for="ano-select">Ano da Próxima Compra:</label>
+          <select id="ano-select">
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+            <option value="2028">2028</option>
+            <option value="2029">2029</option>
+            <option value="2030">2030</option>
+          </select>
+        </div>
+      </div>
+
+      <button type="button" onclick="gerarTabela()">Gerar Código</button>
+    </div>
+
+    <!-- Campo para exibir o código gerado -->
+    <div class="formulario">
+      <h3>Código Gerado:</h3>
+      <textarea id="codigo-gerado" rows="10" readonly></textarea>
+      <button id="copy-btn" onclick="copiarCodigo()">Copiar Código</button>
+    </div>
+  </div>
+
+  <script>
+    function gerarTabela() {
+      const situacoes = {
+        administracao: document.getElementById('administracao-select').value.split('|'),
+        empreendedorismo: document.getElementById('empreendedorismo-select').value.split('|'),
+        rh: document.getElementById('rh-select').value.split('|'),
+        folha: document.getElementById('folha-select').value.split('|'),
+        lideranca: document.getElementById('lideranca-select').value.split('|'),
+        comunicacao: document.getElementById('comunicacao-select').value.split('|'),
+        marketing: document.getElementById('marketing-select').value.split('|'),
+        matematica: document.getElementById('matematica-select').value.split('|'),
+      };
+      const mes = document.getElementById('mes-select').value;
+      const ano = document.getElementById('ano-select').value;
+      const tabelaHTML = `
+<table style="width:100%;">
+  <tr>
+    <th style="text-align: center">MATERIAL</th>
+    <th style="text-align: center">SITUAÇÃO</th>
+  </tr>
+  <tr>
+    <td>Administração</td>
+    <td bgcolor="${situacoes.administracao[0]}" style="text-align: center">${situacoes.administracao[1]}</td>
+  </tr>
+  <tr>
+    <td>Empreendedorismo</td>
+    <td bgcolor="${situacoes.empreendedorismo[0]}" style="text-align: center">${situacoes.empreendedorismo[1]}</td>
+  </tr>
+  <tr>
+    <td>RH e Leis Trabalhistas</td>
+    <td bgcolor="${situacoes.rh[0]}" style="text-align: center">${situacoes.rh[1]}</td>
+  </tr>
+  <tr>
+    <td>Folha de Pagamento</td>
+    <td bgcolor="${situacoes.folha[0]}" style="text-align: center">${situacoes.folha[1]}</td>
+  </tr>
+  <tr>
+    <td>Liderança e Desenvolvimento Humano</td>
+    <td bgcolor="${situacoes.lideranca[0]}" style="text-align: center">${situacoes.lideranca[1]}</td>
+  </tr>
+  <tr>
+    <td>Comunicação Corporativa</td>
+    <td bgcolor="${situacoes.comunicacao[0]}" style="text-align: center">${situacoes.comunicacao[1]}</td>
+  </tr>
+  <tr>
+    <td>Marketing</td>
+    <td bgcolor="${situacoes.marketing[0]}" style="text-align: center">${situacoes.marketing[1]}</td>
+  </tr>
+  <tr>
+    <td>Matemática Financeira</td>
+    <td bgcolor="${situacoes.matematica[0]}" style="text-align: center">${situacoes.matematica[1]}</td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: right; color:red;">*Próxima compra em ${mes}/${ano}</td>
+  </tr>
+</table>`;
+      document.getElementById('codigo-gerado').value = tabelaHTML;
+    }
+
+    function copiarCodigo() {
+      const codigoGerado = document.getElementById('codigo-gerado');
+      codigoGerado.select();
+      document.execCommand('copy');
+      alert('Código copiado com sucesso!');
+    }
+  </script>
+</body>
+</html>
