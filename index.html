@@ -5,6 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gerar Tabela HTML</title>
   <style>
+
+    /* Estilo do menu */
+    .menu {
+      display: flex;
+      justify-content: center;
+      background-color: #333;
+      padding: 10px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    /* Estilo dos botões do menu */
+    .menu a {
+      text-decoration: none;
+      color: white;
+      padding: 10px 20px;
+      margin: 0 10px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      font-weight: bold;
+    }
+
+    /* Efeito ao passar o mouse */
+    .menu a:hover {
+      background-color: #575757;
+    }
+    
     /* Estilo geral */
     body {
       font-family: Arial, sans-serif;
@@ -126,7 +155,13 @@
   </style>
 </head>
 <body>
-
+<!-- Menu de navegação -->
+  <nav class="menu">
+    <a href="index.html">Infonext</a>
+    <a href="sup.html">Suporte Técnico</a>
+    <a href="adm.html">Administração</a>
+    <a href="ingles.html">Inglês</a>
+  </nav>
   <!-- Container principal -->
   <div class="container">
     <!-- Formulário para personalizar as situações -->
